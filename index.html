@@ -1,0 +1,186 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery/jquery-3.6.0.js"></script>
+    <title>
+        Jarvis
+    </title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+.chatinput {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    margin-bottom: 20px;
+}
+        
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    max-width: 1280px; 
+    max-height: 720px;
+}
+
+.chatmassege {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    width: 96%;
+    height: 10%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px 10px 0;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(225, 225, 225, 0.5);
+}
+
+.chatlog{
+    background:-webkit-linear-gradient(left, #1a0ba590 , #27faec90);
+    padding-top: 10px;
+    width: 100%;
+    height: 501px;
+    overflow-y: scroll;
+    
+}
+
+.chat {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+}
+
+.user {
+    left: -1;
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 18% 0;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.5);
+    overflow-wrap: break-word;
+}
+
+.jarvis{
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 10px 0;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.562);
+    overflow-wrap: break-word;
+}
+
+.content {
+    position: fixed;
+    color: #000000;
+    left: 25%;
+    padding: 25pxpx;
+    margin-left: -320;
+    width: 640px;
+    min-width: 640px;
+    height: 525px;
+    margin: 20px auto;
+    box-shadow: 0 3px #ccc;
+}
+        
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;        
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+    <source src="static/video/video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
+<div class="content">
+    <div class="content" >
+        <div class="chatlog">
+            <div id="chatbox">    
+                <div class="jarvis">
+                    <p class="bottext"><span>Hii!! I Am J.A.R.V.I.S</span></p>
+                </div>
+                <div class="chatinput">
+                    <input type="text" id="usertxt" style="padding: 12px;width: 590px;" placeholder="Enter Command" name="inp">
+                    <button onclick="inp()" style="width:45px;height:45px;color:black;">send</button>
+                </div>
+                <div id="bottom">
+                    <p></p>
+                </div>
+            </div>
+        </div>    
+    </div>
+        <!--<button id="myBtn" onclick="myFunction()">Pause</button>-->
+</div>
+<script>
+
+function cremsg(){
+    var elem = document.createElement('div');
+    var txt = document.createTextNode('this is a p')
+    elem.appendChild(txt)
+    document.getElementById('chatbox').appendChild(elem)
+    elem.classList.add('user')
+}
+
+function inp() {
+    var txt = document.getElementById('usertxt').value;
+    document.getElementById('chatbox').innerHTML += "<p class='user'><span>"+txt+"</span></p>";
+    while (true) {
+        var text = txt
+        console.log(text)
+        if (text.includes('your name') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>JARVIS</span></p>';
+        } 
+        else if (text.includes('your creator') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>the name of my Creator is Tejas</span></p>';
+        } 
+        else if (text.includes('who are you') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Jarvis , a Artificial Intelligence program , Made to help everyone</span></p>';
+        }
+        else if (text.includes('whom are you') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Jarvis , a Artificial Intelligence program , Made to help everyone</span></p>';
+        } 
+        else if (text.includes('jarvis') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>yes, sir</span></p>';
+        } 
+        else if (text.includes('how are you') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Fine , and how are you</span></p>';
+        } 
+        else if (text.includes('introduce yourself') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>Hi ,I am "Jarvis" who can help you any time,in any situation and in any field </span></p>';
+        } 
+        else{
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>sorry sir, i am unable understand that</span></p>';
+        }  
+    }
+}
+</script>
+</body>
+</html>
