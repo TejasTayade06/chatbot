@@ -159,17 +159,23 @@ function inp() {
         else if (text.includes('your creator') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>the name of my Creator is Tejas</span></p>';
         } 
-        else if (text.includes('who are you') == true){
+        else if (text.includes('Who are you') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Jarvis , a Artificial Intelligence program , Made to help everyone</span></p>';
         }
-        else if (text.includes('whom are you') == true){
+        else if (text.includes('Whom are you') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Jarvis , a Artificial Intelligence program , Made to help everyone</span></p>';
         } 
         else if (text.includes('jarvis') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>yes, sir</span></p>';
+        }
+        else if (text.includes('Jarvis') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>yes, sir</span></p>';
         } 
-        else if (text.includes('how are you') == true){
+        else if (text.includes('How are you') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am Fine , and how are you</span></p>';
+        }
+        else if (text.includes('your age') == true){
+            return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>I am a bot i dont have any age</span></p>';
         } 
         else if (text.includes('introduce yourself') == true){
             return document.getElementById('chatbox').innerHTML += '<p class="jarvis"><span>Hi ,I am "Jarvis" who can help you any time,in any situation and in any field </span></p>';
