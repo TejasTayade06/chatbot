@@ -10,108 +10,113 @@
         Jarvis
     </title>
     <style>
+        * {
+            font-family: tahoma, sans-serif;
+            box-sizing: border-box;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: tahoma, sans-serif;
-    box-sizing: border-box;
-}
+        .chatinput {
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: 10%;
+        }
+                
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 1270;
+            height: 720px;
+            
+        }
 
-.chatinput {
-    position: fixed;
-    bottom: 0;
-    background-color: white;
-    margin-bottom: 20px;
-}
-        
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    max-width: 1280px; 
-    max-height: 720px;
-}
+        .chatmassege {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+            width: 96%;
+            height: 10%;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 5px 10px 0;
+            color: #fff;
+            font-size: 18px;
+            background: rgba(225, 225, 225, 0.5);
+        }
 
-.chatmassege {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    width: 96%;
-    height: 10%;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 5px 10px 0;
-    color: #fff;
-    font-size: 18px;
-    background: rgba(225, 225, 225, 0.5);
-}
+        .chatlog{
+            background:-webkit-linear-gradient(left, #1a0ba590 , #27faec90);
+            padding-top: 10px;
+            width: 100%;
+            height: 90%;
+            overflow-y: scroll;
+            
+        }
 
-.chatlog{
-    background:-webkit-linear-gradient(left, #1a0ba590 , #27faec90);
-    padding-top: 10px;
-    width: 100%;
-    height: 501px;
-    overflow-y: scroll;
-    
-}
+        .chat {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: flex-start;
+        }
 
-.chat {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-}
+        .user {
+            left: -1;
+            width: 80%;
+            padding: 8px 0px 8px 10px;
+            border-radius: 10px;
+            margin: 10px 18% 0;
+            color: #fff;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.5);
+            overflow-wrap: break-word;
+        }
 
-.user {
-    left: -1;
-    width: 80%;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 18% 0;
-    color: #fff;
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.5);
-    overflow-wrap: break-word;
-}
+        .jarvis{
+            width: 80%;
+            height: auto;
+            padding: 8px 0px 8px 10px;
+            border-radius: 10px;
+            margin: 10px 10px 0;
+            color: #fff;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.562);
+            overflow-wrap: break-word;
+        }
 
-.jarvis{
-    width: 80%;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px 10px 0;
-    color: #fff;
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.562);
-    overflow-wrap: break-word;
-}
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            width: 70%;
+            height: 80%;
+            
+        }
+                
+        #myBtn {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;        
+        }
 
-.content {
-    position: fixed;
-    color: #000000;
-    left: 25%;
-    padding: 25pxpx;
-    margin-left: -320;
-    width: 640px;
-    min-width: 640px;
-    height: 525px;
-    margin: 20px auto;
-    box-shadow: 0 3px #ccc;
-}
-        
-#myBtn {
-    width: 200px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    background: #000;
-    color: #fff;
-    cursor: pointer;        
-}
+        .inputbox {
+            width: 78%;
+            height: 100%;
+            margin: 0px;
+            border: 0px;
+            padding: 0px;
+        }
 
-#myBtn:hover {
-    background: #ddd;
-    color: black;
-}
+        #myBtn:hover {
+            background: #ddd;
+            color: black;
+        }
 </style>
 </head>
 <body>
@@ -120,25 +125,18 @@
     <source src="static/video/video.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
 </video>
-<div class="content">
-    <div class="content" >
-        <div class="chatlog">
-            <div id="chatbox">    
-                <div class="jarvis">
-                    <p class="bottext"><span>Hii!! I Am J.A.R.V.I.S</span></p>
-                </div>
-                <div class="chatinput">
-                    <input type="text" id="usertxt" style="padding: 12px;width: 590px;" placeholder="Enter Command" name="inp">
-                    <button onclick="inp()" style="width:45px;height:45px;color:black;">send</button>
-                </div>
-                <div id="bottom">
-                    <p></p>
-                </div>
-            </div>
-        </div>    
-    </div>
-        <!--<button id="myBtn" onclick="myFunction()">Pause</button>-->
+<div class="content" >
+    <div class="chatlog">   
+        <div id="chatbox">
+            <p class="jarvis">Hii!! I Am J.A.R.V.I.S</p>
+        </div>
+    </div> 
+    <div class="chatinput">
+        <input type="text" id="usertxt" class="inputbox" placeholder="   Enter Command" name="inp">
+        <button onclick="inp()" style="width:20%;height:100%;color:black;margin: 0px;border:0px;padding:0px;">send</button>
+    </div>   
 </div>
+        <!--<button id="myBtn" onclick="myFunction()">Pause</button>-->
 <script>
 
 function cremsg(){
